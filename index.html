@@ -4,51 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>言葉 Journal</title>
+    <script src="https://cdn.claude-ai.com/claude-sdk.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        .container { max-width: 600px; margin: auto; }
-        .entry { margin-bottom: 20px; }
-        textarea { width: 100%; height: 200px; }
-        button { margin-top: 10px; }
+        .blurred { opacity: 0.5; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>言葉 Journal</h1>
-        <div class="entry">
-            <h2>English Proofreading</h2>
-            <textarea id="english-entry" placeholder="Write your English journal entry here..."></textarea>
-            <button onclick="proofreadEnglish()">Proofread</button>
-            <div id="english-feedback"></div>
-        </div>
-        <div class="entry">
-            <h2>Chinese Journal Practice</h2>
-            <textarea id="chinese-entry" placeholder="Write your Chinese journal entry here..."></textarea>
-            <button onclick="analyzeChinese()">Analyze</button>
-            <div id="chinese-feedback"></div>
-        </div>
-        <div class="entry">
-            <h2>Japanese Journal Practice</h2>
-            <textarea id="japanese-entry" placeholder="Write your Japanese journal entry here..."></textarea>
-            <button onclick="analyzeJapanese()">Analyze</button>
-            <div id="japanese-feedback"></div>
-        </div>
+    <h1>言葉 Journal</h1>
+    <h2>English Section</h2>
+    <div>
+        <h3>Vocabulary List</h3>
+        <ul class="blurred">
+            <li>Word 1</li>
+            <li>Word 2</li>
+            <li>Word 3</li>
+        </ul>
+        <h3>User Translation</h3>
+        <textarea id="userTranslation" rows="4" cols="50"></textarea>
+        <button onclick="proofread('en')">Proofread</button>
+        <h3>Model Sentences</h3>
+        <ul class="blurred">
+            <li>Example sentence 1.</li>
+            <li>Example sentence 2.</li>
+        </ul>
+    </div>
+    <h2>中文部分</h2>
+    <div>
+        <h3>词汇表</h3>
+        <ul class="blurred">
+            <li>词 1</li>
+            <li>词 2</li>
+            <li>词 3</li>
+        </ul>
+        <h3>用户翻译</h3>
+        <textarea id="userTranslationZh" rows="4" cols="50"></textarea>
+        <button onclick="proofread('zh')">校对</button>
+        <h3>示例句子</h3>
+        <ul class="blurred">
+            <li>示例句子 1.</li>
+            <li>示例句子 2.</li>
+        </ul>
+    </div>
+    <h2>日本語セクション</h2>
+    <div>
+        <h3>語彙リスト</h3>
+        <ul class="blurred">
+            <li>単語 1</li>
+            <li>単語 2</li>
+            <li>単語 3</li>
+        </ul>
+        <h3>ユーザー翻訳</h3>
+        <textarea id="userTranslationJa" rows="4" cols="50"></textarea>
+        <button onclick="proofread('ja')">校正</button>
+        <h3>モデル文</h3>
+        <ul class="blurred">
+            <li>例文 1.</li>
+            <li>例文 2.</li>
+        </ul>
     </div>
     <script>
-        function proofreadEnglish() {
-            const entry = document.getElementById('english-entry').value;
-            // Call your English proofreading API here
-            document.getElementById('english-feedback').innerText = 'Proofreading feature not yet implemented!';
-        }
-        function analyzeChinese() {
-            const entry = document.getElementById('chinese-entry').value;
-            // Call your Chinese analysis API here
-            document.getElementById('chinese-feedback').innerText = 'Analysis feature not yet implemented!';
-        }
-        function analyzeJapanese() {
-            const entry = document.getElementById('japanese-entry').value;
-            // Call your Japanese analysis API here
-            document.getElementById('japanese-feedback').innerText = 'Analysis feature not yet implemented!';
+        function proofread(lang) {
+            const userText = lang === 'en' ? document.getElementById('userTranslation').value : lang === 'zh' ? document.getElementById('userTranslationZh').value : document.getElementById('userTranslationJa').value;
+            // Call Claude API for proofreading
+            // Implement API call here and handle response
         }
     </script>
 </body>
