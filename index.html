@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>言葉 Journal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .entry { margin-bottom: 20px; }
+        textarea { width: 100%; height: 200px; }
+        button { margin-top: 10px; }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <div class="container">
+        <h1>言葉 Journal</h1>
+        <div class="entry">
+            <h2>English Proofreading</h2>
+            <textarea id="english-entry" placeholder="Write your English journal entry here..."></textarea>
+            <button onclick="proofreadEnglish()">Proofread</button>
+            <div id="english-feedback"></div>
+        </div>
+        <div class="entry">
+            <h2>Chinese Journal Practice</h2>
+            <textarea id="chinese-entry" placeholder="Write your Chinese journal entry here..."></textarea>
+            <button onclick="analyzeChinese()">Analyze</button>
+            <div id="chinese-feedback"></div>
+        </div>
+        <div class="entry">
+            <h2>Japanese Journal Practice</h2>
+            <textarea id="japanese-entry" placeholder="Write your Japanese journal entry here..."></textarea>
+            <button onclick="analyzeJapanese()">Analyze</button>
+            <div id="japanese-feedback"></div>
+        </div>
+    </div>
+    <script>
+        function proofreadEnglish() {
+            const entry = document.getElementById('english-entry').value;
+            // Call your English proofreading API here
+            document.getElementById('english-feedback').innerText = 'Proofreading feature not yet implemented!';
+        }
+        function analyzeChinese() {
+            const entry = document.getElementById('chinese-entry').value;
+            // Call your Chinese analysis API here
+            document.getElementById('chinese-feedback').innerText = 'Analysis feature not yet implemented!';
+        }
+        function analyzeJapanese() {
+            const entry = document.getElementById('japanese-entry').value;
+            // Call your Japanese analysis API here
+            document.getElementById('japanese-feedback').innerText = 'Analysis feature not yet implemented!';
+        }
+    </script>
 </body>
 </html>
